@@ -42,14 +42,14 @@ const AdminAnalyticsPage = () => {
   };
 
   const fetchAnalytics = async () => {
-    const response = await axios.get("/api/analytics", {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/analytics`, {
       headers: getAuthHeaders(),
     });
     setStats(response.data);
   };
 
   const fetchProducts = async () => {
-    const response = await axios.get("/api/products");
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/products`);
     setProducts(response.data);
   };
 
@@ -101,7 +101,7 @@ const AdminAnalyticsPage = () => {
 
       formData.append("image", createForm.image);
 
-      await axios.post("/api/products", formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/products`, formData, {
         headers: {
           ...getAuthHeaders(),
           "Content-Type": "multipart/form-data",
@@ -156,7 +156,7 @@ const AdminAnalyticsPage = () => {
         formData.append("image", editForm.image);
       }
 
-      await axios.put(`/api/products/${editProductId}`, formData, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/products/${editProductId}`, formData, {
         headers: {
           ...getAuthHeaders(),
           "Content-Type": "multipart/form-data",
@@ -189,7 +189,7 @@ const AdminAnalyticsPage = () => {
       formData.append("category", product.category);
       formData.append("stock", product.stock > 0 ? 0 : 1);
 
-      await axios.put(`/api/products/${product._id}`, formData, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/products/${product._id}`, formData, {
         headers: {
           ...getAuthHeaders(),
           "Content-Type": "multipart/form-data",

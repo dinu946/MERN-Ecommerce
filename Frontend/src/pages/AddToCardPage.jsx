@@ -19,7 +19,7 @@ const AddToCardPage = () => {
 
         const GetProduct = async () => {
             try {
-                const response = await axios.get(`/api/products/${id}`)
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
                 setProduct(response.data)
 
             } catch (error) {

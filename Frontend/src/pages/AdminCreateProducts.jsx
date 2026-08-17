@@ -100,7 +100,7 @@ const AdminCreateProducts = () => {
       formData.append("image", createForm.image);
 
       const response = await axios.post(
-        "http://localhost:3000/api/products",
+        `${import.meta.env.VITE_API_URL}/api/products`,
         formData,
         {
           headers: {

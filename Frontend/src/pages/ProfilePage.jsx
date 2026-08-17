@@ -29,7 +29,7 @@ const ProfilePage = () => {
       setOrdersError("");
 
       try {
-        const response = await axios.get("/api/cart/orders", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cart/orders`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -27,7 +27,7 @@ const AdminUpdateOrderPage = () => {
   };
 
   const fetchOrders = async () => {
-    const response = await axios.get("/api/cart", { headers: getAuthHeaders() });
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cart`, { headers: getAuthHeaders() });
     setOrders(response.data);
   };
 
@@ -85,7 +85,7 @@ const AdminUpdateOrderPage = () => {
 
     try {
       await axios.put(
-        `/api/cart/admin/${selectedOrderId}`,
+        `${import.meta.env.VITE_API_URL}/api/cart/admin/${selectedOrderId}`,
         {
           totalAmount: Number(form.totalAmount),
           paymentId: form.paymentId.trim(),

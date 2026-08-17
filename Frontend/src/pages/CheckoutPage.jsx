@@ -114,7 +114,7 @@ const CheckoutPage = () => {
         },
       };
 
-      await axios.post("/api/cart", payload, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/cart`, payload, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

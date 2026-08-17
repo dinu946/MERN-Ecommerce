@@ -17,7 +17,7 @@ export const NewArrivel = () => {
         const getProducts = async () => {
             try {
                 const response = await axios.get(
-                    "/api/products"
+                    `${import.meta.env.VITE_API_URL}/api/products`
                 );
 
                 setProducts(response.data);

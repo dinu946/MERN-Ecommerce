@@ -47,7 +47,7 @@ const AdminUpdateProducts = () => {
       setLoading(true);
 
       const response = await axios.get(
-        "http://localhost:3000/api/products"
+        `${import.meta.env.VITE_API_URL}/api/products`
       );
 
       setProducts(response.data);
@@ -158,7 +158,7 @@ const AdminUpdateProducts = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:3000/api/products/${selectedProduct._id}`,
+        `${import.meta.env.VITE_API_URL}/api/products/${selectedProduct._id}`,
         formData,
         {
           headers: {

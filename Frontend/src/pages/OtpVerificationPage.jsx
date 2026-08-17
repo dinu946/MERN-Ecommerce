@@ -89,7 +89,7 @@ const OtpVerificationPage = () => {
         try {
 
             const response = await axios.post(
-                "/api/auth/verify-otp",
+                `${import.meta.env.VITE_API_URL}/api/auth/verify-otp`,
                 {
                     email,
                     otp: otpValue,
@@ -142,7 +142,7 @@ const OtpVerificationPage = () => {
         try {
 
             const response = await axios.post(
-                "/api/auth/resend-otp",
+                `${import.meta.env.VITE_API_URL}/api/auth/resend-otp`,
                 {
                     email,
                 }

@@ -28,7 +28,7 @@ const AdminDeleteProducts = () => {
             setError("");
 
             const response = await axios.get(
-                "http://localhost:3000/api/products"
+                `${import.meta.env.VITE_API_URL}/api/products`
             );
 
             setProducts(response.data);
@@ -64,7 +64,7 @@ const AdminDeleteProducts = () => {
             setSuccess("");
 
             await axios.delete(
-                `http://localhost:3000/api/products/${productId}`,
+                `${import.meta.env.VITE_API_URL}/api/products/${productId}`,
                 {
                     headers: getAuthHeaders(),
                 }

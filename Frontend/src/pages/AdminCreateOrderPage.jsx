@@ -60,8 +60,8 @@ const AdminCreateOrderPage = () => {
       setError("");
       try {
         const [usersRes, productsRes] = await Promise.all([
-          axios.get("/api/auth/users", { headers: getAuthHeaders() }),
-          axios.get("/api/products"),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/auth/users`, { headers: getAuthHeaders() }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/products`),
         ]);
 
         setUsers(usersRes.data);
