@@ -158,7 +158,7 @@ Payment credentials are stored securely using environment variables and are not 
 * Image upload optimization
 * Deployment and CI/CD
 
-## 🌐 Live Demo[ https://mern-ecommerce-1-v4b1.onrender.com/login ]
+## 🌐 Live Demo[ https://mern-ecommerce-1-v4b1.onrender.com ]
 
 
 
